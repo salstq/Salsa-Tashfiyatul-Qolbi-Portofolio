@@ -1,8 +1,8 @@
-name: Deploy React Portofolio to Pages
+name: Static HTML Deployment
 
 on:
   push:
-    branches: [main, master] # Otomatis jalan di branch main atau master
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -22,99 +22,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Create package.json and HTML Wrapper
-        run: |
-          # Membuat file package.json otomatis agar server tahu ini project Vite + React
-          echo '{
-            "name": "portfolio",
-            "private": true,
-            "version": "0.0.0",
-            "type": "module",
-            "scripts": {
-              "build": "vite build"
-            },
-            "dependencies": {
-              "react": "^18.3.1",
-              "react-dom": "^18.3.1",
-              "lucide-react": "^0.344.0"
-            },
-            "devDependencies": {
-              "@types/react": "^18.3.3",
-              "@types/react-dom": "^18.3.0",
-              "@vitejs/plugin-react": "^4.3.1",
-              "autoprefixer": "^10.4.19",
-              "postcss": "^8.4.38",
-              "tailwindcss": "^3.4.3",
-              "typescript": "^5.2.2",
-              "vite": "^5.3.1"
-            }
-          }' > package.json
-
-          # Membuat file konfigurasi Vite
-          echo 'import { defineConfig } from "vite";
-          import react from "@vitejs/plugin-react";
-          export default defineConfig({
-            plugins: [react()],
-          });' > vite.config.js
-
-          # Membuat index.html sebagai gerbang utama web
-          echo '<!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>Salsa Tashfiyatul Qolbi - Portfolio</title>
-              <script src="https://cdn.tailwindcss.com"></script>
-            </head>
-            <body class="bg-slate-950 text-slate-100">
-              <div id="root"></div>
-              <script type="module" src="/src/main.jsx"></script>
-            </body>
-          </html>' > index.html
-
-          # Membuat folder src dan memindahkan file utama
-          mkdir -p src
-          
-          # Membuat file main.jsx untuk merender React ke index.html
-          echo 'import React from "react";
-          import ReactDOM from "react-dom/client";
-          import App from "./App.jsx";
-          ReactDOM.createRoot(document.getElementById("root")).render(
-            <React.StrictMode>
-              <App />
-            </React.StrictMode>
-          );' > src/main.jsx
-
-      - name: Move your App code
-        run: |
-          # Memindahkan file App.js/App.jsx buatanmu ke folder src
-          # Jika file utamamu di root bernama App.js atau App.jsx, kita amankan ke src/App.jsx
-          if [ -f App.jsx ]; then
-            mv App.jsx src/App.jsx
-          elif [ -f App.js ]; then
-            mv App.js src/App.jsx
-          elif [ -f index.html ]; then
-            # Jika kamu menimpa isi index.html dengan kode React kemarin, kita ubah namanya jadi App.jsx
-            mv index.html src/App.jsx
-          fi
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Project
-        run: npm run build
-
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
-
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
