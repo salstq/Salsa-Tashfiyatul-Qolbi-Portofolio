@@ -59,8 +59,8 @@
           },
           {
             id: 2,
-            title: "Scientific Writing: Infant Cry Classification",
-            category: "Deep Learning & NLP",
+            title: "Infant Cry Classification",
+            category: "Deep Learning & Classification",
             tools: ["TensorFlow", "Python", "Streamlit", "Google Colab"],
             summary: "A machine learning and audio signal processing project focused on classifying infant cries based on acoustic features.",
             description: "This scientific study aims to classify infant cries into distinct behavioral categories based on sound analysis. MFCCs (Mel-Frequency Cepstral Coefficients) were extracted from raw audio files to represent speech features. We developed and trained neural network models using TensorFlow, deploying the final highly-accurate model onto a lightweight Streamlit web application for real-time sound file inference.",
@@ -74,13 +74,13 @@
             gsheetLink: null,
             githubLink: "https://github.com/salstq/Penulisan-Ilmiah-Infant-Cry",
             difficulty: "Advanced",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+            image: "https://github.com/salstq/salstq.github.io/blob/main/public/Screenshot%202026-06-05%20184015.png"
           },
           {
             id: 3,
-            title: "Makeup & Skincare Product Recommendation System",
-            category: "Predictive Analytics",
-            tools: ["Google Colab", "Python", "Scikit-Learn"],
+            title: "Recommendation System Products and Skincare",
+            category: "Machine Learning",
+            tools: ["Google Colab", "Python", "Streamlit", "Github"],
             summary: "A content-based filtering system using TF-IDF and Cosine Similarity to suggest makeup and skincare items based on product profiles.",
             description: "This project builds an automated recommendation engine for makeup and skincare products. By utilizing a content-based filtering approach, the system extracts critical features like product descriptions, key ingredients, categories, and skin-type targets. We implemented TF-IDF vectorization to represent textual features and used Cosine Similarity to compute recommendations for personalized beauty matchmaking.",
             insights: [
@@ -92,9 +92,47 @@
             dashboardLink: null,
             gsheetLink: null,
             githubLink: "https://github.com/salstq/Recommendation-System-Products-and-Skincare-",
-            difficulty: "Advanced",
-            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600"
-          }
+            difficulty: "Fundamental",
+            image: "https://github.com/salstq/salstq.github.io/blob/main/public/Screenshot%202026-06-05%20184215.png"
+          },
+          {
+            id: 4,
+            title: "Bike Sharing Demand Analysis",
+            category: "Data Analytics",
+            tools: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+            summary: "Analyzed bike rental demand patterns and user behavior by exploring the impact of weather, seasonal factors, and time-based trends.",
+            description: "This project focuses on analyzing bike-sharing rental data to uncover factors that influence bicycle demand. Through data cleaning, exploratory data analysis (EDA), and visualization techniques, the project examines the effects of weather conditions, temperature, humidity, seasons, holidays, and working days on rental activity. The findings provide valuable insights for optimizing bike availability, improving operational planning, and supporting data-driven decision-making for bike-sharing services.",
+            insights: [
+                "Identified seasonal trends showing higher rental demand during favorable weather conditions.",
+                "Discovered strong correlations between temperature, humidity, and daily bike rental counts.",
+                "Generated actionable recommendations to improve bike allocation and reduce shortages during peak demand periods."
+            ],
+            notebookLink: "https://github.com/salstq/Projek-Analisis-Data-Dicoding/blob/main/Proyek_Analisis_Data.ipynb",
+            dashboardLink: "https://bnnb7nith9i42gztalsaxh.streamlit.app/",
+            gsheetLink: null,
+            githubLink: "https://github.com/salstq/Projek-Analisis-Data-DicodingU",
+            difficulty: "Intermediate",
+            image:  "https://github.com/salstq/salstq.github.io/blob/main/public/Screenshot%202026-06-05%20184215.png"
+          },
+          {
+            id: 5,
+            title: "Customer Response Prediction for Marketing Campaign",
+            category: "Machine Learning",
+            tools: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
+            summary: "Built classification models to predict customer responses to marketing campaigns using demographic and purchasing behavior data.",
+            description: "This project aims to predict whether customers are likely to respond to a marketing campaign by leveraging machine learning techniques. The workflow includes data preprocessing, feature engineering, handling class imbalance, model training, and performance evaluation. Multiple classification algorithms were compared to identify the most effective approach for predicting campaign outcomes. The resulting model helps businesses improve targeting strategies, optimize marketing budgets, and increase campaign conversion rates.",
+            insights: [
+              "Compared multiple classification models to determine the best-performing algorithm for customer response prediction.",
+              "Identified key customer attributes that significantly influence campaign engagement and conversion likelihood.",
+              "Provided data-driven recommendations to improve campaign targeting and marketing efficiency."
+            ],
+            notebookLink: "https://github.com/salstq/Customer-Response-Prediction-for-Marketing-Campaign/blob/main/Kelas%20B_51422497_Salsa%20Tashfiyatul%20Qolbi.pdf",
+            dashboardLink: null,
+            gsheetLink: null,
+            githubLink: "https://github.com/salstq/Customer-Response-Prediction-for-Marketing-Campaign",
+            difficulty: "Intermediate",
+            image: "https://github.com/salstq/salstq.github.io/blob/main/public/Screenshot%202026-06-05%20185605.png"
+        }
         ];
 
         const certifications = [
@@ -123,8 +161,8 @@
           const [filterCategory, setFilterCategory] = useState("All");
           const [searchTerm, setSearchTerm] = useState("");
 
-          const cvUrl = "https://docs.google.com/document/d/1example/edit?usp=sharing";
-          const profilePhotoUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600";
+          const cvUrl = "https://github.com/salstq/salstq.github.io/blob/main/public/Salsa%20Tashfiyatul%20Qolbi-CV.pdf";
+          const profilePhotoUrl = "https://github.com/salstq/Salsa-Tashfiyatul-Qolbi-Portofolio/blob/main/public/profile.png";
 
           const categories = ["All", ...new Set(projectsData.map(p => p.category))];
 
@@ -178,7 +216,6 @@
                     
                     <div className="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
                       <div className="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-full px-3 py-1.5 text-xs text-pink-400 font-semibold shadow-inner">
-                        <Icon name="sparkles" className="w-3.5 h-3.5 text-pink-500" />
                         <span>Open for Job Opportunities & Collaboration</span>
                       </div>
                       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-slate-50">
@@ -227,19 +264,12 @@
                       <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
                         <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-rose-500 rounded-[2.5rem] rotate-6 opacity-30 blur-sm scale-105"></div>
                         <div className="absolute inset-0 bg-gradient-to-bl from-fuchsia-500 to-violet-500 rounded-[2.5rem] -rotate-3 opacity-20"></div>
-                        
-                        <div className="absolute -top-4 -left-4 z-20 w-24 h-24 bg-slate-900/90 rounded-2xl border border-pink-500/30 flex items-center justify-center p-3 backdrop-blur-md shadow-xl">
-                          <div className="text-center">
-                            <span className="block font-black text-pink-400 text-2xl">5+</span>
-                            <span className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold">Analytical Projects</span>
-                          </div>
-                        </div>
 
                         <div className="absolute -bottom-4 -right-4 z-20 bg-slate-900/90 px-4 py-2.5 rounded-xl border border-rose-500/30 flex items-center gap-2.5 backdrop-blur-md shadow-xl">
                           <span className="w-2.5 h-2.5 bg-pink-500 rounded-full"></span>
                           <div className="text-left">
                             <p className="text-[10px] text-slate-400 font-mono">Core Skills</p>
-                            <p className="text-xs font-bold text-slate-100">SQL, Python, Excel</p>
+                            <p className="text-xs font-bold text-slate-100">SQL, Excel, Python</p>
                           </div>
                         </div>
 
@@ -271,7 +301,7 @@
                       <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Key Technologies Mastered</p>
                     </div>
                     <div>
-                      <h4 className="text-3xl sm:text-4xl font-black text-pink-400">2M+</h4>
+                      <h4 className="text-3xl sm:text-4xl font-black text-pink-400">1M+</h4>
                       <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Rows of Cleaned Data</p>
                     </div>
                     <div>
@@ -289,7 +319,7 @@
                     <div className="inline-block bg-pink-500/10 text-pink-400 text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wider mb-4">About Me</div>
                     <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-slate-50">Translating Raw Data Into Actionable Strategic Decisions</h2>
                     <div className="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-                      <p>I am a final-year Computer Science student specializing in Data Analytics and Data Science. I have hands-on experience utilizing SQL, Python, and advanced Excel for data tracking, cleaning, and financial reporting.</p>
+                      <p>I am a final-year Computer Science student specializing in Data Analytics and Data Science. I have hands-on experience utilizing SQL, Python, Power BI, Looker, and advanced Excel for data tracking, cleaning, and financial reporting.</p>
                       <p>My proven track record includes successfully translating raw analytical data into actionable business insights and strategic dashboards.</p>
                     </div>
 
@@ -324,14 +354,26 @@
                         <div className="relative">
                           <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-pink-500 border-4 border-slate-950"></div>
                           <span className="text-xs text-pink-400 font-bold">2022 - Present</span>
-                          <h4 className="font-bold text-slate-100 text-sm sm:text-base mt-1">B.S. in Computer Science</h4>
-                          <p className="text-xs sm:text-sm text-slate-400">Major University</p>
+                          <h4 className="font-bold text-slate-100 text-sm sm:text-base mt-1">Computer Science</h4>
+                          <p className="text-xs sm:text-sm text-slate-400">Gunadarma University</p>
                         </div>
                         <div className="relative">
                           <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-4 border-slate-950"></div>
-                          <span className="text-xs text-pink-400 font-bold">2024</span>
+                          <span className="text-xs text-pink-400 font-bold">2026 (Feb-Present)</span>
+                          <h4 className="font-bold text-slate-100 text-sm sm:text-base mt-1">Data Science Facilitator</h4>
+                          <p className="text-xs sm:text-sm text-slate-400">Dicoding / Coding Camp Powered by DBS Foundation 2026</p>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-4 border-slate-950"></div>
+                          <span className="text-xs text-pink-400 font-bold">2026 (Jan-Mar)</span>
                           <h4 className="font-bold text-slate-100 text-sm sm:text-base mt-1">Data Analyst Intern</h4>
-                          <p className="text-xs sm:text-sm text-slate-400">Tech & Financial Reporting Division</p>
+                          <p className="text-xs sm:text-sm text-slate-400">PT Jawa Pos Multi Media</p>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-4 border-slate-950"></div>
+                          <span className="text-xs text-pink-400 font-bold">2026 (Jan-Present)</span>
+                          <h4 className="font-bold text-slate-100 text-sm sm:text-base mt-1">Admin Supervisor</h4>
+                          <p className="text-xs sm:text-sm text-slate-400">Gunadarma University / Advance Management Laboratory</p>
                         </div>
                       </div>
                     </div>
@@ -369,8 +411,8 @@
                       <div className="p-3 bg-pink-500/10 text-pink-400 rounded-xl w-12 h-12 flex items-center justify-center mb-5 group-hover:bg-gradient-to-tr group-hover:from-pink-500 group-hover:to-rose-500 group-hover:text-slate-950 transition-all duration-300">
                         <Icon name="code-2" className="w-6 h-6" />
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-slate-100">Analytics & ML</h3>
-                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Python</span></div>
+                      <h3 className="font-bold text-lg mb-2 text-slate-100">ML & Deep Learning</h3>
+                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Python, Tensorflow, Pandas, Numpy, etc</span></div>
                     </div>
 
                     <div className="bg-slate-900 border border-slate-800/80 p-6 rounded-2xl hover:border-pink-500/30 transition-all group">
@@ -378,15 +420,15 @@
                         <Icon name="bar-chart-3" className="w-6 h-6" />
                       </div>
                       <h3 className="font-bold text-lg mb-2 text-slate-100">Business Intelligence</h3>
-                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Power BI</span></div>
+                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Power BI, Looker</span></div>
                     </div>
 
                     <div className="bg-slate-900 border border-slate-800/80 p-6 rounded-2xl hover:border-pink-500/30 transition-all group">
                       <div className="p-3 bg-pink-500/10 text-pink-400 rounded-xl w-12 h-12 flex items-center justify-center mb-5 group-hover:bg-gradient-to-tr group-hover:from-pink-500 group-hover:to-rose-500 group-hover:text-slate-950 transition-all duration-300">
                         <Icon name="layers" className="w-6 h-6" />
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-slate-100">Excel & Deployment</h3>
-                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Advanced Excel</span></div>
+                      <h3 className="font-bold text-lg mb-2 text-slate-100">Analytics</h3>
+                      <div className="flex flex-wrap gap-1.5 mt-4"><span className="text-xs bg-slate-950 border border-slate-800 px-2 py-1 rounded text-slate-300">Advanced Excel, Google Analytics</span></div>
                     </div>
 
                   </div>
@@ -529,6 +571,10 @@
                       </a>
                       <a href="https://www.linkedin.com/in/salsatashfiyatulqolbi" target="_blank" rel="noopener noreferrer" className="bg-slate-900 border border-slate-800 p-5 rounded-xl flex items-center space-x-4 group">
                         <div className="p-3 bg-pink-500/10 text-pink-400 rounded-lg"><Icon name="linkedin" className="w-5 h-5" /></div>
+                        <div><p className="text-xs text-slate-500 uppercase font-bold">LinkedIn</p><p className="font-semibold text-slate-200">salsatashfiyatulqolbi</p></div>
+                      </a>
+                      <a href="https://github.com/salstq" target="_blank" rel="noopener noreferrer" className="bg-slate-900 border border-slate-800 p-5 rounded-xl flex items-center space-x-4 group">
+                        <div className="p-3 bg-pink-500/10 text-pink-400 rounded-lg"><Icon name="github" className="w-5 h-5" /></div>
                         <div><p className="text-xs text-slate-500 uppercase font-bold">LinkedIn</p><p className="font-semibold text-slate-200">salsatashfiyatulqolbi</p></div>
                       </a>
                     </div>
